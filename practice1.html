@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice-1</title>
+</head>
+<body>
+   <style>
+    .thumbnails>img{
+        width: 50px;
+        border-radius: 50%;
+        content: center;
+        
+        
+    }
+    .thumbnails{
+        
+        display: flex;
+         column-gap: 2px;
+         margin-bottom: 30px;
+         margin-left: 50%;
+        
+        
+    }
+    
+    .main-image>img{
+        
+        width: 600px;
+        height: 300px;
+        margin-left: 30%;
+    }
+   </style>
+    <div class="gallery">
+        <div class="thumbnails">
+            <img src="images/dal1.jpg" alt="thumbnail 1"></img>
+            <img src="images/sonamarg1.jpg" alt="thumbnail 2"></img>
+        </div>
+
+    <div class="main-image">
+        <img src="images/sonamarg1.jpg" alt="Main Image">
+    </div>
+    </div>
+    <script>
+        const thumbnails = document.querySelectorAll('.thumbnails img');
+        const mainImage = document.querySelector('.main-image img')
+
+        thumbnails.forEach(thumbnail =>{
+            thumbnail.addEventListener('click', ()=>{
+                const imagePath = thumbnail.getAttribute('src');
+                mainImage.setAttribute('src',imagePath);
+            });
+        });
+    </script>
+</body>
+</html>
